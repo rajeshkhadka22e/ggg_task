@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            whatsapp: '#25D366',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body>
+  <nav class="bg-white py-6 border-b shadow-sm fixed top-0 left-0 w-full z-10">
+    <div class="container mx-auto px-4 lg:px-10 flex justify-between items-center ">
+      <!-- Logo -->
+      <div class="flex items-center space-x-6 text-center">
+        <img src="image/logo-ggg-all-1 (1).png" alt="GGG Platforms Logo" class="h-20">
+
+      </div>
+
+      <!-- Hamburger Menu -->
+      <button class="lg:hidden text-gray-500 focus:outline-none" id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6h16.5M3.75 12h16.5m-16.5 6h16.5" />
+        </svg>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="hidden lg:flex items-center space-x-9 " id="menu">
+        <a href="#" class="nav-link relative text-gray-500 font-medium ">Home</a>
+
+        <div class="flex justify-center items-center">
+            <div class="relative w-full max-w-screen-md">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 focus:border-blue-500"
+              />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute left-3 text-gray-700 top-1/2 transform -translate-y-1/2 w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 7.65a7.5 7.5 0 010 10.7z" />
+              </svg>
+            </div>
+            <!-- <a href="#" class="text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 7.65a7.5 7.5 0 010 10.7z" />
+                </svg>
+              </a> -->
+          </div>
+       
+   
+      
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-9">
+        <a href="#" class="nav-link relative text-gray-500 font-medium ">Sign Up</a>
+        <a href="#" class="nav-link relative text-gray-500 font-medium ">Login</a>
+        <!-- Search Icon -->
+      
+        <!-- Cart Icon -->
+        <a href="#" class="relative text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0L7 13h10l1.6-8H5.4m0 0L4 5H2.4M10 21a2 2 0 100-4 2 2 0 000 4zm7-2a2 2 0 100-4 2 2 0 000 4z" />
+          </svg>
+          <span class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">1</span>
+        </a>
+        <!-- WhatsApp Icon -->
+        <a href="#" class="bg-whatsapp text-white py-2 px-3 rounded-lg">
+            <i class="fa-brands fa-whatsapp"></i>      
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // Handle Mobile Menu Toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+
+<!-- Hero section -->
+<section class="w-full mt-44 ">
+    <div class=" container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 py-6 px-10  min-h-96"">
+        <!-- Card 1 -->
+        <div class="relative w-full h-full ">
+          <img
+            src="image/img.jpg"
+            alt="Card Image 1"
+            class="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+          <div
+            class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
+          >
+            <h2 class="text-white text-xl md:text-2xl font-semibold">
+              Your Text Here
+            </h2>
+          </div>
+        </div>
+      
+        <!-- Card 2 -->
+        <div class="relative w-full h-full">
+          <img
+            src="image/img2.jpg"
+            alt="Card Image 2"
+            class="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+          <div
+            class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
+          >
+            <h2 class="text-white text-xl md:text-2xl font-semibold">
+              Another Text Here
+            </h2>
+          </div>
+        </div>
+      </div>
+      
+</section>
+
+<section class="container mx-auto px-8">
+    <div class="grid  md:grid-cols-7 gap-6">
+        <div class="col-span-2 ">
+          <div class="container mx-auto px-4 py-6">
+            <!-- Buttons -->
+            <div class="space-y-4">
+              <button 
+                class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition"
+                onclick="showForm('free-member')">
+                Sign Up Free Member (Email - Phone)
+              </button>
+              <button 
+                class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
+                onclick="showForm('partner')">
+                Sign Up Partner
+              </button>
+              <button 
+                class="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition"
+                onclick="showForm('prices')">
+                See All Prices
+              </button>
+              <button 
+                class="w-full bg-gray-500 text-white py-3 rounded-lg hover:bg-gray-600 transition"
+                onclick="showForm('newsletter')">
+                News Letter
+              </button>
+            </div>
+          
+            <!-- Forms -->
+            <div id="forms" class="mt-8 space-y-6">
+              <!-- Free Member Form -->
+              <div id="free-member" class="hidden bg-white shadow-lg p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">Sign Up Free Member</h2>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full border p-3 rounded-lg mb-3"
+                />
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  class="w-full border p-3 rounded-lg mb-3"
+                />
+                <button class="bg-blue-500 text-white py-2 px-6 rounded-lg">
+                  Submit
+                </button>
+              </div>
+          
+              <!-- Partner Form -->
+              <div id="partner" class="hidden bg-white shadow-lg p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">Sign Up Partner</h2>
+                <input
+                  type="text"
+                  placeholder="Partner Name"
+                  class="w-full border p-3 rounded-lg mb-3"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full border p-3 rounded-lg mb-3"
+                />
+                <button class="bg-green-500 text-white py-2 px-6 rounded-lg">
+                  Submit
+                </button>
+              </div>
+          
+              <!-- Prices -->
+              <div id="prices" class="hidden bg-white shadow-lg p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">All Prices</h2>
+                <p>Price details will go here...</p>
+              </div>
+          
+              <!-- Newsletter Form -->
+              <div id="newsletter" class="hidden bg-white shadow-lg p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">News Letter</h2>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full border p-3 rounded-lg mb-3"
+                />
+                <button class="bg-gray-500 text-white py-2 px-6 rounded-lg">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          
+            <!-- Note -->
+            <p class="text-sm text-gray-500 mt-4">
+              * Free Version - No Credit Card Needed
+            </p>
+          </div>
+          
+        </div>
+        <div class="col-span-3">
+            <div class="relative w-full h-full ">
+                <img
+                  src="image/img3.jpg"
+                  alt="Card Image 1"
+                  class="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
+                >
+                  <h2 class="text-white text-xl md:text-2xl font-semibold">
+                    Your Text Here
+                  </h2>
+                </div>
+              </div>
+        </div>
+        <div class="col-span-2 ">
+            <div class="rounded-lg">
+                <div class="flex items-center justify-center bg-gray-100">
+                    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+                      <h2 class="text-2xl font-semibold text-center text-gray-700 mb-6">
+                        Login
+                      </h2>
+                      <form>
+                        <!-- Login Options -->
+                        <div class="flex justify-center mb-4">
+                          <button
+                            type="button"
+                            id="emailTab"
+                            class="tab-button border-b-2 border-blue-500 text-blue-500 px-4 py-2"
+                            onclick="showEmailForm()"
+                          >
+                            Login with Email
+                          </button>
+                          <button
+                            type="button"
+                            id="numberTab"
+                            class="tab-button border-b-2 border-transparent text-gray-500 px-4 py-2"
+                            onclick="showNumberForm()"
+                          >
+                            Login with Number
+                          </button>
+                        </div>
+                  
+                        <!-- Email Login Form -->
+                        <div id="emailForm" class="form-section">
+                          <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700">
+                              Email Address
+                            </label>
+                            <input
+                              type="email"
+                              id="email"
+                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Enter your email"
+                            />
+                          </div>
+                          <div class="mb-4">
+                            <label for="password" class="block text-sm font-medium text-gray-700">
+                              Password
+                            </label>
+                            <input
+                              type="password"
+                              id="password"
+                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Enter your password"
+                            />
+                          </div>
+                        </div>
+                  
+                        <!-- Phone Number Login Form -->
+                        <div id="numberForm" class="form-section hidden">
+                          <div class="mb-4">
+                            <label
+                              for="phoneNumber"
+                              class="block text-sm font-medium text-gray-700"
+                            >
+                              Phone Number
+                            </label>
+                            <input
+                              type="text"
+                              id="phoneNumber"
+                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Enter your phone number"
+                            />
+                          </div>
+                          <div class="mb-4">
+                            <label for="otp" class="block text-sm font-medium text-gray-700">
+                              OTP
+                            </label>
+                            <input
+                              type="text"
+                              id="otp"
+                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Enter OTP"
+                            />
+                          </div>
+                        </div>
+                  
+                        <!-- Submit Button -->
+                        <button
+                          type="submit df"
+                          class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        >
+                          Login
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- our patner customer -->
+<section class="container px-8 mx-auto my-6">
+  <div class="w-full overflow-x-auto bg-white shadow-zinc-400 shadow-lg p-4 rounded-lg">
+      <div class="flex gap-8 justify-center items-center icon-container">
+        <!-- Zillow -->
+        <a href="#">
+          <div class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">Z</span>
+            <span class="icon-label text-lg text-gray-500">Zillow</span>
+          </div>
+        </a>
+        <!-- Drop Box -->
+        <a href="#">
+          <div class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">💎</span>
+            <span class="icon-label text-lg text-gray-500">Drop Box</span>
+          </div>
+        </a>
+        <!-- Pinterest -->
+        <a href="#" class="icon-item flex gap-2 items-center">
+          <span class="icon-text text-lg font-bold text-gray-600">O</span>
+          <span class="icon-label text-lg text-gray-500">Pinterest</span>
+        </a>
+        <!-- Google -->
+        <a href="#" class="icon-item flex gap-2 items-center">
+          <span class="icon-text text-lg font-bold text-gray-600">📧</span>
+          <span class="icon-label text-lg text-gray-500">Google</span>
+        </a>
+        <!-- IBM -->
+        <a href="#" class="icon-item flex gap-2 items-center">
+          <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
+          <span class="icon-label text-lg text-gray-500">IBM</span>
+        </a>
+        <!-- Microsoft -->
+        <a href="#" class="icon-item flex gap-2 items-center">
+          <span class="icon-text text-lg font-bold text-gray-600">△</span>
+          <span class="icon-label text-lg text-gray-500">Microsoft</span>
+        </a>
+        <!-- Meta -->
+        <a href="#" class="icon-item flex gap-2 items-center">
+          <span class="icon-text text-lg font-bold text-gray-600">✕</span>
+          <span class="icon-label text-lg text-gray-500">Meta</span>
+        </a>
+      </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
