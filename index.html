@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GGG_task</title>
-  <link rel="shortcut icon" href="image/logo-ggg-all-1 (1).png" type="image/x-icon">
+  <link rel="shortcut icon" class="rounded-2xl" href="image/logo-ggg-all-1 (1).png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
@@ -21,7 +21,7 @@
   </script>
 </head>
 <body>
-  <nav class="bg-white py-6 border-b shadow-sm fixed top-0 left-0 w-full z-10">
+  <nav class="bg-white py-3 border-b shadow-sm fixed top-0 left-0 w-full z-10">
     <div class="container mx-auto px-4 lg:px-10 flex justify-between items-center ">
       <!-- Logo -->
       <div class="flex items-center space-x-6 text-center">
@@ -38,7 +38,7 @@
 
       <!-- Navbar Links -->
       <div class="hidden lg:flex items-center space-x-9 " id="menu">
-        <a href="#" class="nav-link relative text-gray-500 font-medium ">Home</a>
+        <a href="#" class="nav-link relative text-gray-500 font-medium "> <i class="fa-thin fa-house mr-4" ></i> Home</a>
 
         <div class="flex justify-center items-center">
             <div class="relative w-full max-w-screen-md">
@@ -93,14 +93,14 @@
 
 
 <!-- Hero section -->
-<section class="w-full mt-44 ">
+<section class="w-full mt-32 ">
     <div class=" container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 py-6 px-10  min-h-96"">
         <!-- Card 1 -->
         <div class="relative w-full h-full ">
           <img
             src="image/img.jpg"
             alt="Card Image 1"
-            class="w-full h-full object-cover rounded-lg shadow-lg"
+            class="w-full h-full object-cover rounded-lg "
           />
           <div
             class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
@@ -116,7 +116,7 @@
           <img
             src="image/img2.jpg"
             alt="Card Image 2"
-            class="w-full h-full object-cover rounded-lg shadow-lg"
+            class="w-full h-full object-cover rounded-lg"
           />
           <div
             class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
@@ -132,8 +132,8 @@
 
 <section class="container mx-auto px-8">
     <div class="grid  md:grid-cols-7 gap-6">
-        <div class="col-span-2 ">
-          <div class="container mx-auto px-4 py-6">
+        <div class="col-span-2 border rounded-lg  ">
+          <div class="container mx-auto px-4 py-6 ">
             <!-- Buttons -->
             <div class="space-y-4">
               <button 
@@ -228,7 +228,7 @@
                 <img
                   src="image/img3.jpg"
                   alt="Card Image 1"
-                  class="w-full h-full object-cover rounded-lg shadow-lg"
+                  class="w-full h-full object-cover rounded-lg"
                 />
                 <div
                   class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg"
@@ -242,7 +242,7 @@
         <div class="col-span-2 ">
             <div class="rounded-lg">
                 <div class="flex items-center justify-center bg-gray-100">
-                    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+                    <div class="bg-white p-8 rounded-lg border w-full max-w-md">
                       <h2 class="text-2xl font-semibold text-center text-gray-700 mb-6">
                         Login
                       </h2>
@@ -340,51 +340,83 @@
 
 
 <!-- our patner customer -->
-<section class="container px-8 mx-auto my-6">
-  <div class="w-full overflow-x-auto bg-white shadow-zinc-400 shadow-lg p-4 rounded-lg">
-      <div class="flex gap-8 justify-center items-center icon-container">
-        <!-- Zillow -->
-        <a href="#">
-          <div class="icon-item flex gap-2 items-center">
-            <span class="icon-text text-lg font-bold text-gray-600">Z</span>
-            <span class="icon-label text-lg text-gray-500">Zillow</span>
-          </div>
-        </a>
-        <!-- Drop Box -->
-        <a href="#">
-          <div class="icon-item flex gap-2 items-center">
-            <span class="icon-text text-lg font-bold text-gray-600">💎</span>
-            <span class="icon-label text-lg text-gray-500">Drop Box</span>
-          </div>
-        </a>
-        <!-- Pinterest -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">O</span>
-          <span class="icon-label text-lg text-gray-500">Pinterest</span>
-        </a>
-        <!-- Google -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">📧</span>
-          <span class="icon-label text-lg text-gray-500">Google</span>
-        </a>
-        <!-- IBM -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
-          <span class="icon-label text-lg text-gray-500">IBM</span>
-        </a>
-        <!-- Microsoft -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">△</span>
-          <span class="icon-label text-lg text-gray-500">Microsoft</span>
-        </a>
-        <!-- Meta -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">✕</span>
-          <span class="icon-label text-lg text-gray-500">Meta</span>
-        </a>
-      </div>
+<section class="border-b border-gray-500">
+  <div class="container px-8 mx-auto mt-6">
+    <div class="w-full overflow-x-auto bg-white py-4 ">
+        <div class="flex gap-8 justify-center items-center icon-container">
+          <!-- Zillow -->
+          <a href="#">
+            <div class="icon-item flex gap-2 items-center">
+              <span class="icon-text text-lg font-bold text-gray-600">Z</span>
+              <span class="icon-label text-lg text-gray-500">Zillow</span>
+            </div>
+          </a>
+          <!-- Drop Box -->
+          <a href="#">
+            <div class="icon-item flex gap-2 items-center">
+              <span class="icon-text text-lg font-bold text-gray-600">💎</span>
+              <span class="icon-label text-lg text-gray-500">Drop Box</span>
+            </div>
+          </a>
+          <!-- Pinterest -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">O</span>
+            <span class="icon-label text-lg text-gray-500">Pinterest</span>
+          </a>
+          <!-- Google -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">📧</span>
+            <span class="icon-label text-lg text-gray-500">Google</span>
+          </a>
+          <!-- IBM -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
+            <span class="icon-label text-lg text-gray-500">IBM</span>
+          </a>
+          <!-- Microsoft -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">△</span>
+            <span class="icon-label text-lg text-gray-500">Microsoft</span>
+          </a>
+          <!-- Meta -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">✕</span>
+            <span class="icon-label text-lg text-gray-500">Meta</span>
+          </a>
+        </div>
+    </div>
   </div>
 </section>
+
+<!-- social media icons  -->
+<footer class="container mx-auto px-8" >
+  <div class="flex items-center justify-between  py-4 ">
+  <!-- Social Icons -->
+    <div class="flex gap-4">
+      <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
+        <span class="mr-2"><i class="fab fa-instagram text-red-500  border p-1 rounded-sm border-red-500"></i></span> Instagram
+      </a>
+      <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
+        <span class="mr-2">  <i class="fab fa-facebook-f border p-1 rounded-sm border-black"></i>
+        </span> Facebook
+      </a>
+      <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
+        <i class="fab fa-tiktok  border p-1 rounded-sm border-black mr-2"></i>
+
+        TikTok
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex-grow mx-4 border-t border-dashed border-gray-400"></div>
+
+    <!-- Share Button -->
+    <button class="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded hover:bg-blue-600 ">
+      SHARE <i class="fas fa-play  ml-2"></i>
+
+    </button>
+  </div>  
+</footer>
 
 <script src="script.js"></script>
 </body>
