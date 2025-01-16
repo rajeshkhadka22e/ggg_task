@@ -8,6 +8,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+/* General styles */
+.ticker-wrapper {
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-flex;
+  animation: none; /* Default: No animation */
+}
+
+/* Animation for small screens */
+@media (max-width: 768px) {
+  .ticker-content {
+    animation: ticker 10s linear infinite;
+  }
+
+  @keyframes ticker {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -26,7 +54,7 @@
     <div class="container mx-auto px-4 lg:px-10 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center space-x-6 mb-8 text-center">
-        <img src="image/logo-ggg-all-1 (1).png" alt="GGG Platforms Logo" class="h-20">
+        <img src="https://gggplatforms.com/wp-content/uploads/2023/09/logo-ggg-all-1.png" alt="GGG Platforms Logo" class="h-20">
       </div>
   
       <!-- Search (Visible on all screen sizes) -->
@@ -72,7 +100,7 @@
     <!-- Mobile Menu (Positioned fixed with custom size and placement) -->
     <div class="lg:hidden fixed top-0 right-0 w-1/2 h-3/4 bg-white z-20 shadow-md transform transition-all hidden" id="mobile-menu">
       <div class="flex justify-between items-center p-4">
-        <img src="image/logo-ggg-all-1 (1).png" alt="GGG Platforms Logo" class="h-12">
+        <img src="https://gggplatforms.com/wp-content/uploads/2023/09/logo-ggg-all-1.png" alt="GGG Platforms Logo" class="h-12">
         <button id="close-menu" class="text-gray-500">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -100,7 +128,7 @@
         <!-- Card 1 -->
         <div class="relative w-full h-full ">
           <img
-            src="image/img.jpg"
+            src="https://gulfgoldgroup.com/wp-content/uploads/2025/01/g2.png"
             alt="Card Image 1"
             class="w-full h-full object-cover rounded-lg "
           />
@@ -116,7 +144,7 @@
         <!-- Card 2 -->
         <div class="relative w-full h-full">
           <img
-            src="image/img2.jpg"
+            src="https://gulfgoldgroup.com/wp-content/uploads/2025/01/g1.png"
             alt="Card Image 2"
             class="w-full h-full object-cover rounded-lg"
           />
@@ -228,7 +256,7 @@
         <div class="col-span-3  mb-6 md:mb-0 ">
             <div class="relative w-full h-full ">
                 <img
-                  src="image/img3.jpg"
+                  src="https://gulfgoldgroup.com/wp-content/uploads/2025/01/g3.png"
                   alt="Card Image 1"
                   class="w-full h-full object-cover rounded-lg"
                 />
@@ -331,49 +359,54 @@
 
 
 <!-- our patner customer -->
+<!-- Our Partner Customer -->
 <section class="border-b border-gray-500">
   <div class="container px-8 mx-auto mt-6">
-    <div class="w-full bg-white py-4">
-      <div class="flex flex-wrap gap-8 justify-center items-center">
-        <!-- Zillow -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">Z</span>
-          <span class="icon-label text-lg text-gray-500">Zillow</span>
-        </a>
-        <!-- Drop Box -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">💎</span>
-          <span class="icon-label text-lg text-gray-500">Drop Box</span>
-        </a>
-        <!-- Pinterest -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">O</span>
-          <span class="icon-label text-lg text-gray-500">Pinterest</span>
-        </a>
-        <!-- Google -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">📧</span>
-          <span class="icon-label text-lg text-gray-500">Google</span>
-        </a>
-        <!-- IBM -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
-          <span class="icon-label text-lg text-gray-500">IBM</span>
-        </a>
-        <!-- Microsoft -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">△</span>
-          <span class="icon-label text-lg text-gray-500">Microsoft</span>
-        </a>
-        <!-- Meta -->
-        <a href="#" class="icon-item flex gap-2 items-center">
-          <span class="icon-text text-lg font-bold text-gray-600">✕</span>
-          <span class="icon-label text-lg text-gray-500">Meta</span>
-        </a>
+    <div class="w-full bg-white py-4  overflow-hidden">
+      <div class="ticker-wrapper ">
+        <div class="ticker-content md:justify-center flex gap-8 items-center ">
+          <!-- Zillow -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">Z</span>
+            <span class="icon-label text-lg text-gray-500">Zillow</span>
+          </a>
+          <!-- Drop Box -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">💎</span>
+            <span class="icon-label text-lg text-gray-500">Drop Box</span>
+          </a>
+          <!-- Pinterest -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">O</span>
+            <span class="icon-label text-lg text-gray-500">Pinterest</span>
+          </a>
+          <!-- Google -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">📧</span>
+            <span class="icon-label text-lg text-gray-500">Google</span>
+          </a>
+          <!-- IBM -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
+            <span class="icon-label text-lg text-gray-500">IBM</span>
+          </a>
+          <!-- Microsoft -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">△</span>
+            <span class="icon-label text-lg text-gray-500">Microsoft</span>
+          </a>
+          <!-- Meta -->
+          <a href="#" class="icon-item flex gap-2 items-center">
+            <span class="icon-text text-lg font-bold text-gray-600">✕</span>
+            <span class="icon-label text-lg text-gray-500">Meta</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 <!-- footer -->
 <footer class="container mx-auto">
   <div class="flex flex-wrap items-center justify-between py-4">
@@ -403,5 +436,68 @@
 </footer>
 <!-- script -->
 <script src="script.js"></script>
+<script>
+
+// Handle Mobile Menu Toggle
+document.getElementById('menu-btn').addEventListener('click', (e) => {
+ const menu = document.getElementById('mobile-menu');
+ menu.classList.toggle('hidden');
+ e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+// Close mobile menu when clicking the close button
+document.getElementById('close-menu').addEventListener('click', () => {
+ const menu = document.getElementById('mobile-menu');
+ menu.classList.add('hidden');
+});
+
+// Close mobile menu when clicking on an item
+const menuLinks = document.querySelectorAll('#mobile-menu .nav-link');
+menuLinks.forEach((link) => {
+ link.addEventListener('click', () => {
+   const menu = document.getElementById('mobile-menu');
+   menu.classList.add('hidden');
+ });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+ const menu = document.getElementById('mobile-menu');
+ const menuBtn = document.getElementById('menu-btn');
+ if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+   menu.classList.add('hidden');
+ }
+});
+
+// Add 'active' class to the current page link
+const currentPage = window.location.pathname;
+
+const links = document.querySelectorAll('.nav-link');
+
+// Initially set the active link based on the current page
+links.forEach(link => {
+ if (link.getAttribute('href') === currentPage) {
+   link.classList.add('text-blue-500', 'font-bold', 'underline');
+ } else {
+   link.classList.remove('text-blue-500', 'font-bold', 'underline');
+ }
+});
+
+// Add event listener to each link to update the active class on click
+links.forEach(link => {
+ link.addEventListener('click', () => {
+   // Remove 'active' class from all links
+   links.forEach(l => {
+     l.classList.remove('text-blue-500', 'font-bold');
+   });
+
+   // Add 'active' class to the clicked link
+   link.classList.add('text-blue-500', 'font-bold');
+ });
+});
+
+
+ 
+</script>
 </body>
 </html>
