@@ -2,544 +2,199 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GGG_task</title>
-  <link rel="shortcut icon" class="rounded-2xl object-cover object-top" href="image/logo-ggg-all-1 (1).png"
-    type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* General styles */
-    .ticker-wrapper {
-      white-space: nowrap;
-    }
-
-    .ticker-content {
-      display: inline-flex;
-      animation: none;
-      /* Default: No animation */
-    }
-
-    /* Animation for small screens */
-    @media (max-width: 768px) {
-      .ticker-content {
-        animation: ticker 10s linear infinite;
-      }
-
-      @keyframes ticker {
-        from {
-          transform: translateX(100%);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
         }
-
-        to {
-          transform: translateX(-100%);
-        }
-      }
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            whatsapp: '#25D366',
-          },
-        },
-      },
-    };
-  </script>
+    </style>
 </head>
 
 <body>
-  <!-- navbar -->
-  <section class="container border-4 border-orange-500  mx-auto rounded-2xl px-8">
-    <nav class="bg-white  border-b shadow-sm top-0 left-0 w-full z-10">
-      <div class="container mx-auto px-4 lg:px-10 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center space-x-6 mb-8 text-center">
-          <img src="https://gggplatforms.com/wp-content/uploads/2023/09/logo-ggg-all-1.png" alt="GGG Platforms Logo"
-            class="h-20">
-        </div>
-
-        <!-- Search (Visible on all screen sizes) -->
-        <div class="flex justify-center mt-6 lg:mt-0 items-center w-full lg:w-auto">
-          <div class="relative w-full max-w-screen-md">
-            <input type="text" placeholder="Search..."
-              class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 focus:border-blue-500" />
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="absolute left-3 text-gray-700 top-1/2 transform -translate-y-1/2 w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 7.65a7.5 7.5 0 010 10.7z" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Hamburger Menu (Visible on mobile only) -->
-        <button class="lg:hidden text-gray-500 focus:outline-none mb-4 ml-3" id="menu-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6h16.5M3.75 12h16.5m-16.5 6h16.5" />
-          </svg>
-        </button>
-
-        <!-- Navbar Links (Hidden on mobile, shown on desktop) -->
-        <div class="hidden lg:flex items-center space-x-9" id="menu">
-          <a href="#" class="nav-link relative text-gray-500 font-medium" id="home-link">
-            <i class="fa-thin fa-house mr-4"></i> Home
-          </a>
-          <a href="#" class="nav-link relative text-gray-500 font-medium" id="signup-link">Sign Up</a>
-          <a href="#" class="nav-link relative text-gray-500 font-medium" id="login-link">Login</a>
-          <a href="#" class="relative text-gray-500 hover:text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M3 3h2l.4 2m0 0L7 13h10l1.6-8H5.4m0 0L4 5H2.4M10 21a2 2 0 100-4 2 2 0 000 4zm7-2a2 2 0 100-4 2 2 0 000 4z" />
-            </svg>
-            <span
-              class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">1</span>
-          </a>
-          <a href="#" class="bg-whatsapp text-white py-2 px-3 rounded-lg">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Mobile Menu (Positioned fixed with custom size and placement) -->
-      <div class="lg:hidden fixed top-0 right-0 w-1/2 h-3/4 bg-white z-20 shadow-md transform transition-all hidden"
-        id="mobile-menu">
-        <div class="flex justify-between items-center p-4">
-          <img src="https://gggplatforms.com/wp-content/uploads/2023/09/logo-ggg-all-1.png" alt="GGG Platforms Logo"
-            class="h-12">
-          <button id="close-menu" class="text-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-col items-center space-y-4 py-8">
-          <a href="#" class="nav-link text-gray-500 font-medium">Home</a>
-          <a href="#" class="nav-link text-gray-500 font-medium">Sign Up</a>
-          <a href="#" class="nav-link text-gray-500 font-medium">Login</a>
-          <a href="#" class="text-gray-500 hover:text-gray-700 flex mr-1"> <span href="#"
-              class="relative text-gray-500 hover:text-gray-700">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 3h2l.4 2m0 0L7 13h10l1.6-8H5.4m0 0L4 5H2.4M10 21a2 2 0 100-4 2 2 0 000 4zm7-2a2 2 0 100-4 2 2 0 000 4z" />
-              </svg>
-              <span
-                class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">1</span>
-            </span></a>
-          <a href="#" class="bg-whatsapp text-white py-2 px-3 rounded-lg"> <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp</a>
-        </div>
-      </div>
-    </nav>
-    <!-- Hero section -->
-    <section class="w-full mt-2 ">
-      <div class=" container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 py-6   min-h-96"">
-        <!-- Card 1 -->
-        <div class=" relative w-full h-full ">
-          <img
-            src=" https://gulfgoldgroup.com/wp-content/uploads/2025/01/g2.png" alt="Card Image 1"
-        class="w-full h-full object-cover rounded-lg " />
-      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-        <!-- <h2 class="text-white text-xl md:text-2xl font-semibold">
-              Your Text Here
-            </h2> -->
-      </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="relative w-full h-full">
-        <img src="https://gulfgoldgroup.com/wp-content/uploads/2025/01/g1.png" alt="Card Image 2"
-          class="w-full h-full object-cover rounded-lg" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-          <!-- <h2 class="text-white text-xl md:text-2xl font-semibold">
-              Another Text Here
-            </h2> -->
-        </div>
-      </div>
-      </div>
-
-    </section>
-    <!-- login way image  signup for free -->
-    <section class="container mx-auto ">
-      <div class="grid  md:grid-cols-7  md:gap-6">
-        <div class="col-span-2 border rounded-lg mb-6 md:mb-0  ">
-          <div class="container mx-auto px-4 py-6 my-auto ">
-            <!-- Buttons -->
-            <div class="space-y-6 ">
-              <button class="w-full bg-blue-500 text-white py-4 rounded-lg hover:bg-blue-600 transition"
-                onclick="showForm('free-member')">
-                Sign Up Free Member (Email - Phone)
-              </button>
-              <button class="w-full bg-green-500 text-white py-4 rounded-lg hover:bg-green-600 transition"
-                onclick="showForm('partner')">
-                Sign Up Partner
-              </button>
-              <button class="w-full bg-yellow-500 text-white py-4 rounded-lg hover:bg-yellow-600 transition"
-                onclick="showForm('prices')">
-                See All Prices
-              </button>
-              <button class="w-full bg-gray-500 text-white py-4 rounded-lg hover:bg-gray-600 transition"
-                onclick="showForm('newsletter')">
-                News Letter
-              </button>
-            </div>
-
-            <!-- Forms -->
-            <div id="forms" class="mt-8 space-y-6">
-              <!-- Free Member Form -->
-              <div id="free-member" class="hidden bg-white shadow-lg p-6 rounded-lg">
-                <h2 class="text-lg font-bold mb-4">Sign Up Free Member</h2>
-                <input type="email" placeholder="Email" class="w-full border p-3 rounded-lg mb-3" />
-                <input type="text" placeholder="Phone" class="w-full border p-3 rounded-lg mb-3" />
-                <button class="bg-blue-500 text-white py-2 px-6 rounded-lg">
-                  Submit
-                </button>
-              </div>
-
-              <!-- Partner Form -->
-              <div id="partner" class="hidden bg-white shadow-lg p-6 rounded-lg">
-                <h2 class="text-lg font-bold mb-4">Sign Up Partner</h2>
-                <input type="text" placeholder="Partner Name" class="w-full border p-3 rounded-lg mb-3" />
-                <input type="email" placeholder="Email" class="w-full border p-3 rounded-lg mb-3" />
-                <button class="bg-green-500 text-white py-2 px-6 rounded-lg">
-                  Submit
-                </button>
-              </div>
-
-              <!-- Prices -->
-              <div id="prices" class="hidden bg-white shadow-lg p-6 rounded-lg">
-                <h2 class="text-lg font-bold mb-4">All Prices</h2>
-                <p>Price details will go here...</p>
-              </div>
-
-              <!-- Newsletter Form -->
-              <div id="newsletter" class="hidden bg-white shadow-lg p-6 rounded-lg">
-                <h2 class="text-lg font-bold mb-4">News Letter</h2>
-                <input type="email" placeholder="Email" class="w-full border p-3 rounded-lg mb-3" />
-                <button class="bg-gray-500 text-white py-2 px-6 rounded-lg">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-
-            <!-- Note -->
-            <p class="text-sm text-gray-500 mt-4">
-              * Free Version - No Credit Card Needed
-            </p>
-          </div>
-
-        </div>
-        <div class="col-span-3  mb-6 md:mb-0 ">
-          <div class="relative w-full h-full ">
-            <img src="https://gulfgoldgroup.com/wp-content/uploads/2025/01/g3.png" alt="Card Image 1"
-              class="w-full h-full object-cover rounded-lg" />
-            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-              <!-- <h2 class="text-white text-xl md:text-2xl font-semibold">
-                    Your Text Here
-                  </h2> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-span-2   mb-6 md:mb-0 ">
-          <div class="rounded-lg">
-            <div class="flex items-center w-full md:justify-center ">
-              <div class="bg-white p-4 rounded-lg border w-full ">
-                <h2 class="text-lg font-normal text-center text-gray-700 mb-1">
-                  Sign Up For Free
-                </h2>
-                <form>
-                  <!-- Email Login Form -->
-                  <div id="emailForm" class="form-section">
-                    <div class="mb-1">
-                      <label for="email" class="block  text-gray-700 font-light text-sm">
-                        Email Address
-                      </label>
-                      <input type="email" id="email"
-                        class="mt-1 block w-full border-gray-300 text-sm rounded-md px-1   py-0.5 border"
-                        placeholder="example@gmail.com" />
+    <div class="border-4 rounded-xl border-orange-400 m-4"> 
+        <nav class="grid md:grid-cols-2 grid-cols-1 border-b-2 border-orange-400 pb-2">
+            <div class="flex flex-col  gap-4 md:border-r-4 border-b-2 md:border-b-0 pb-4 border-orange-400 ">
+                <div class="flex h-24 ">
+                    <div class="flex items-center gap-8 p-4">
+                        <a href="" class="">
+                            <img src="ggg.png" alt="ggg logo">
+                        </a>
+                        <div class="flex gap-4">
+                            <div class="relative w-30 items-center text-center justify-center">
+                                <input type="text"
+                                    class="w-full px-4 py-2 pl-10 text-center items-center justify-center text-gray-700 placeholder-gray-400 border-2 rounded focus:outline-none"
+                                    placeholder="Search...">
+                                <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" 
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M21 21l-4.35-4.35m-4.6 2.6a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/>
+                                </svg>
+                            </div>
+                            
+                            <button class="flex flex-col items-center space-y-1 p-4" id="hamburger-button">
+                                <span class="w-6 h-1 bg-gray-800"></span>
+                                <span class="w-6 h-1 bg-gray-800"></span>
+                                <span class="w-6 h-1 bg-gray-800"></span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="mb-1">
-                      <label for="password" class="block  text-gray-700 font-light text-sm">
-                        Password
-                      </label>
-                      <input type="password" id="password"
-                        class="mt-1 block w-full border-gray-300 text-sm rounded-md px-1  py-0.5 border"
-                        placeholder="********" />
-                    </div>
-                    <div class="mb-1">
-                      <label for="email" class="block  text-gray-700 font-light text-sm ">
-                        Sign In with Phone Number
-
-                      </label>
-                      <input type="email" id="email"
-                        class="mt-1 block w-full b text-sm border-gray-300 px-1 py-0.5 rounded-md border"
-                        placeholder="+977980000000" />
-                    </div>
-                  </div>
-                  <button type="submit "
-                    class="w-full bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    Next
-                  </button>
-                  <div class="grid grid-cols-5 items-center mt-1">
-                    <div class="h-[1px]  col-span-2 w-full bg-gray-300 border--2 border-black"></div>
-                    <div class="">
-                      <p class="text-center">OR</p>
-                    </div>
-                    <div class="h-[1px]  col-span-2 w-full bg-gray-300 border--2 border-black"></div>
-                  </div>
-
-                </form>
-                <div class="space-y-2">
-                  <!-- Google -->
-                  <button
-                    class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-1 px-4 hover:bg-gray-100">
-                    <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Icon" class="w-5 h-5 mr-2">
-                    <span class="text-gray-700 font-light">Sign Up with Google</span>
-                  </button>
-
-                  <!-- Apple -->
-                  <button
-                    class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-1 px-4 hover:bg-gray-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Icon"
-                      class="w-5 h-5 mr-2">
-                    <span class="text-gray-700 font-light">Sign Up with Apple</span>
-                  </button>
-
-                  <!-- Facebook -->
-                  <button
-                    class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-1 px-4  hover:bg-gray-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                      alt="Facebook Icon" class="w-5 h-5 mr-2">
-                    <span class="text-gray-700 font-light">Sign Up with Facebook</span>
-                  </button>
                 </div>
-              </div>
+                <div class="px-8 border-y-2 border-orange-400 items-center  capitalize lg:h-20 md:h-32 py-4 ">
+                    <span class="text-lg"><span class="uppercase font-bold items-center text-center justify-center">why <span
+                                class="text-[#F6CD16]">GGG</span></span>-Core Compentancies & values</span>
+                </div>
 
+                <div class="flex flex-col  px-2 ">
+                    <div class="border-4 rounded-xl px-3 py-2 border-orange-400 px-2 mt-2 capitalize">
+                      <h2>Philanthropy</h2>
+                      <h2>Sustianability</h2>
+                      <h2>Our policy & commitments</h2>
+                      <h2>Our core Compentancies</h2>
+                      <h2>*Import export gold-diamond-gemstones </h2>
+                      <h2>* gold  bullion & Investment products</h2>
+                      <h2> *Industry investment & management</h2>
+                      <h2>* finance</h2>
+      
+                    </div>
+                </div>
             </div>
-            <!-- Buttons -->
-
-          </div>
-        </div>
-      </div>
-    </section>
 
 
 
-    <!-- our patner customer -->
-    <!-- Our Partner Customer -->
-    <section class="border-b border-gray-500">
-      <div class="container px-8 mx-auto mt-6">
-        <div class="w-full bg-white py-4  overflow-hidden">
-          <div class="ticker-wrapper ">
-            <div class="ticker-content md:justify-center flex gap-8 items-center ">
-              <!-- Zillow -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">Z</span>
-                <span class="icon-label text-lg text-gray-500">Zillow</span>
-              </a>
-              <!-- Drop Box -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">💎</span>
-                <span class="icon-label text-lg text-gray-500">Drop Box</span>
-              </a>
-              <!-- Pinterest -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">O</span>
-                <span class="icon-label text-lg text-gray-500">Pinterest</span>
-              </a>
-              <!-- Google -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">📧</span>
-                <span class="icon-label text-lg text-gray-500">Google</span>
-              </a>
-              <!-- IBM -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">▩▩</span>
-                <span class="icon-label text-lg text-gray-500">IBM</span>
-              </a>
-              <!-- Microsoft -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">△</span>
-                <span class="icon-label text-lg text-gray-500">Microsoft</span>
-              </a>
-              <!-- Meta -->
-              <a href="#" class="icon-item flex gap-2 items-center">
-                <span class="icon-text text-lg font-bold text-gray-600">✕</span>
-                <span class="icon-label text-lg text-gray-500">Meta</span>
-              </a>
+
+
+
+
+
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 h-24">
+                    <a href="#" class="text-xl font-bold">Go to: Gulf Gold Group Products & services </a>
+                    <p>Insdustry Investment Mangement</p>
+                </div>
+                 
+                <div class="grid ">
+                    <div class="grid text-xl  ">
+                        <div class="border-y-2 lg:h-20 md:h-32 border-orange-400 px-2 grid grid-cols-3 items-center capitalize">
+                            <div class="border-orange-400 border-r-2 ">
+                                import export gold diamond gemstones
+                            </div class="border-orange-400 border-r-2 ">
+                            <div class="border-orange-400 border-r-2 pl-2">
+                                gold bullion & Investment products
+                            </div>
+
+                            <div class="pl-2">
+                                finance
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-3 gap-0 pl-2">
+                    <div class="flex flex-col">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                    </div>
+                    <div class="flex flex-col">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                    </div>
+                    <div class="flex flex-col">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                        <img class="border-2 border-orange-400 rounded h-20 w-60" src="ggg.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </nav>
+        
 
-
-    <!-- footer -->
-    <footer class="container mx-auto">
-      <div class="flex flex-wrap items-center justify-between py-4">
-        <!-- Social Icons -->
-        <div class="flex gap-4 mb-4 md:mb-0">
-          <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
-            <span class="mr-2"><i class="fab fa-instagram text-red-500 border p-1 rounded-sm border-red-500"></i></span>
-            Instagram
-          </a>
-          <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
-            <span class="mr-2"> <i class="fab fa-facebook-f border p-1 rounded-sm border-black"></i>
-            </span> Facebook
-          </a>
-          <a href="#" class="flex items-center text-gray-700 text-sm hover:text-gray-900">
-            <i class="fab fa-tiktok border p-1 rounded-sm border-black mr-2"></i>
-            TikTok
-          </a>
-        </div>
-
-        <!-- Divider -->
-        <div class="flex-grow mx-4 border-t border-dashed border-gray-400"></div>
-
-        <!-- Share Button -->
-        <button class="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded hover:bg-blue-600">
-          SHARE <i class="fas fa-play ml-2"></i>
-        </button>
-      </div>
-    </footer>
-    <!-- script -->
-    <script src="script.js"></script>
-    <script>
-
-      // Handle Mobile Menu Toggle
-      document.getElementById('menu-btn').addEventListener('click', (e) => {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-        e.stopPropagation(); // Prevent the click event from propagating to the document
-      });
-
-      // Close mobile menu when clicking the close button
-      document.getElementById('close-menu').addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.add('hidden');
-      });
-
-      // Close mobile menu when clicking on an item
-      const menuLinks = document.querySelectorAll('#mobile-menu .nav-link');
-      menuLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          const menu = document.getElementById('mobile-menu');
-          menu.classList.add('hidden');
-        });
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        const menu = document.getElementById('mobile-menu');
-        const menuBtn = document.getElementById('menu-btn');
-        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-          menu.classList.add('hidden');
-        }
-      });
-
-      // Add 'active' class to the current page link
-      const currentPage = window.location.pathname;
-
-      const links = document.querySelectorAll('.nav-link');
-
-      // Initially set the active link based on the current page
-      links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('text-blue-500', 'font-bold', 'underline');
-        } else {
-          link.classList.remove('text-blue-500', 'font-bold', 'underline');
-        }
-      });
-
-      // Add event listener to each link to update the active class on click
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          // Remove 'active' class from all links
-          links.forEach(l => {
-            l.classList.remove('text-blue-500', 'font-bold');
-          });
-
-          // Add 'active' class to the clicked link
-          link.classList.add('text-blue-500', 'font-bold');
-        });
-      });
-
-
-
-    </script>
-
-  </section>
-
-  <!--  ggg pro energy templates -->
-    
-
-  <section class="mb-80 p-2">
-    <div class=" max-w-lg border-[3px] border-red-500 rounded-2xl p-1   mx-auto">
-      <!-- Pro Energy Section -->
-       <div class="grid grid-cols-2 gap-1 mb-2 leading-none ">
-        <div class=" px-1 items-center justify-between border-[3px] border-red-500 rounded-lg py-3">
-          <div class="flex gap-1 ">
-            <div class="col-span-1">      
-                <img src="image/download.png" alt="Pro Energy Logo" class="h-10 w-14">
-            </div>           
-            <div class="col-span-1">
-              <h2 class="text-red-600 font-bold text-sm px-4 border-b border-green-500 flex gap-1 font-ro">PRO <span class=" text-green-600">ENERGY</span></h2>
-              <p class="text-gray-800 font-bold text-[8px] mt-1">Fuel and Petroleum Products Trading</p>
-
-            </div>        
-          </div>
-          </div>
-          <div class="custom-gradient px-3 py-4  leading[0.5px] rounded-xl  ">
-            <div class=" text-white text-sm font-bold py-1 rounded-md">
-              GGG <span class="font-normal">Gold Member</span>
+        <div class="grid md:grid-cols-3 lg:grid-cols-6 grid-cols-2 md:px-8 pb-10  ">
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-2xl">We serve</h2>
+                <div class="border-2 rounded border-orange-400  p-2 mt-2 h-[220px]">
+                    <h2 class="uppercase text-xl">mines & recyclers</h2>
+                    <img src="ggg.png" class="h-auto border-orange-400" alt="">
+                </div>
             </div>
-            <a href="#" class="text-black text-[10px] md:text-sm font-medium opacity-75 "> <span class="text-red-500">*</span>See All Features & Services   <span class=" text-[15px] ">&#8250;</span></a>
-          </div>
-      </div>
-   <div class="border-[3px] border-red-500 rounded-2xl px-3 py-2">
-      <!-- Links Section -->
-      <div class="space-y-0.5 text-[10.1px] md:text-sm">
-        <a href="https://gggproenergy.com/services/" class=" border-b border-gray-300 p-0.5 hover:bg-gray-100 flex justify-between items-center">
-          <span>Go to GGG Pro Energy Product and Services <span class="text-lg">&#8250;</span></span>
-        </a>
-        <a href="https://gggecosystem.com/" class=" border-b border-gray-300   p-0.5 hover:bg-gray-100 flex justify-between items-center">
-          <span>Go to GGG Ecosystem <span class="text-lg">&#8250;</span></span>
-        </a>
-        <a href="https://gggproenergy.com/membership-sign-up/" class=" border-b border-gray-300 p-0.5 hover:bg-gray-100 flex justify-between items-center">
-          <span>Go to GGG Marketplace <span class="text-lg">&#8250;</span></span>
-        </a>
-        <div class="flex justify-between items-center">
-        <a href="https://gggplatforms.com/store-listing/" class=" hover:bg-gray-100 flex ">
-          <span class=" "><span class="text-red-500">*</span>Add/Create your own store to the GGG  <span class="text-lg">&#8250;</span> <br> Ecosystem & GGG Marketplace </span>
-        </a>
-        <a class="px-2  text-white bg-blue-500 rounded-xl items-center text-center text-[9px] md:text-sm py-2 " href="https://gggplatforms.com/partners/osr-connect/">GGG CONNECT:Share</a>
-      </div>
-      </div>
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-2xl">We serve</h2>
+                <div class="border-2 rounded border-orange-400  p-2 mt-2 h-[220px]">
+                    <h2 class="uppercase text-xl">Banks traders investers governments</h2>
+                    <img src="ggg.png" class=" h-24 border-orange-400" alt="">
+                </div>
+            </div>
+
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-2xl">We serve</h2>
+                <div class="border-2 rounded border-orange-400  p-2 mt-2 h-[220px]">
+                    <h2 class="uppercase text-xl">industries</h2>
+                    <div class="h-[180px]">
+                        <img src="ggg.png" class="h-auto border-orange-400 object-cover" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-2xl">BUY SELL</h2>
+                <div class="border-2 rounded border-orange-400 p-2 mt-2 h-[220px]">
+                    <h2 class="uppercase text-xl">
+
+                        <p>CASH CRYPTO </p>
+                        <p>FINANCE INVESTMENTS </p>
+                        <p>GOLD</p>
+                        <p>DIAMOND</p>
+                        <p>GEMSTONES</p>
+
+
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-2xl"> SELL</h2>
+                <div class="border-2 rounded border-orange-400 p-2 mt-2 h-[220px]">
+                    <h2 class="uppercase text-xl">
+
+                        <p>Bullion </p>
+                        <p>Coins </p>
+                        <p>CRYPTO</p>
+                        <p>DIgital gold</p>                        
+
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="md:border-r-2 border-orange-400 px-1">
+                <h2 class="border-b-2 border-orange-400 text-xl uppercase"> finance platforms</h2>
+                <div class="border-2 rounded border-orange-400 p-2 mt-2 h-[220px]">
+                    <h2 class="capitalize text-sm">
+
+                        <p>mining investment mining </p>
+                        <p>Equipment </p>
+                        <p>minimg management</p>
+                        <p>refining investment</p>
+                        <p>transportation </p>                        
+                        <p>reception </p>                        
+                        <p>assaying</p>                        
+                        <p>manufacturing</p>                        
+                        <p>blockchain asset </p>     
+                        <p>digitizing</p>                   
+
+
+                    </h2>
+                </div>
+            </div>
+          
+        </div>
     </div>
-  </div>
-  </section>
-
-<style>
-  .custom-gradient {
-  background: linear-gradient(
-    90deg,
-    #d4af37, /* Light gold */
-    #e6d7b2, /* Deep gold */
-    #f1c27d /* Soft gold shimmer */
-  );
-  
-}
-
-</style>
 
 </body>
 
